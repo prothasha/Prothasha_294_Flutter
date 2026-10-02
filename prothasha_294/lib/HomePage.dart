@@ -6,13 +6,126 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Text(
-        'Hey',
-        style: TextStyle(
-          fontSize: 24,
-          color: Color.fromARGB(255, 213, 127, 189),
-        ),
-      ),
-    );
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        title: Text("Homepage"),
+        centerTitle: true,
+        backgroundColor: const Color.fromARGB(255, 178, 23, 90),
+        foregroundColor: const Color.fromARGB(255, 250, 250, 250),
+        actions: [
+          IconButton(onPressed: () {}, icon: Icon(Icons.person)),
+          IconButton(onPressed: () {}, icon: Icon(Icons.search)),
+          IconButton(onPressed: () {}, icon: Icon(Icons.notification_add)),
+        ],
+      ), // AppBar
+      drawer: Drawer(
+        backgroundColor: const Color.fromARGB(255, 252, 235, 242),
+        child: Column(
+          children: [
+            UserAccountsDrawerHeader(
+              accountName: Text("Name",
+              style: TextStyle(
+              color: Colors.white,
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+              accountEmail: Text("Email",
+              style: TextStyle(
+              color: Colors.white70,
+              fontSize: 14,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+              decoration: BoxDecoration(
+                color: const Color.fromARGB(255, 145, 55, 92),
+              ), // BoxDecoration
+            ), // UserAccountsDrawerHeader
+            ListTile(
+              title: Text("Homepage", style: TextStyle(color: Colors.blueGrey)),
+              leading: IconButton(onPressed: () {}, icon: Icon(Icons.home), color: Colors.blueGrey,),
+              hoverColor: const Color.fromARGB(255, 248, 215, 228),
+              onTap: () {},
+            ), // ListTile
+            Divider(),
+            Spacer(),
+            ListTile(
+              title: Text("Profile", style: TextStyle(color: Colors.blueGrey)),
+              leading: IconButton(onPressed: () {}, icon: Icon(Icons.person), color: Colors.blueGrey,),
+              hoverColor: const Color.fromARGB(255, 248, 215, 228),
+              onTap: () {},
+            ), // ListTile
+          ],
+        ), // Column
+      ), // Drawer
+      body: Padding(
+        padding: const EdgeInsets.all(10),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextButton(
+                onPressed: () {},
+                style: TextButton.styleFrom(
+                  backgroundColor: const Color.fromARGB(255, 194, 83, 127),
+                  foregroundColor: Colors.white,
+                  fixedSize: Size(150, 50),
+                  side: BorderSide(),
+                  elevation: 10,
+                ),
+                child: Text("Text Button"),
+              ), // TextButton
+            ), // Padding
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ElevatedButton(
+                onPressed: () {},
+                style: TextButton.styleFrom(
+                  backgroundColor: const Color.fromARGB(255, 194, 83, 127),
+                  foregroundColor: Colors.white,
+                  fixedSize: Size(150, 50),
+                  side: BorderSide(),
+                  elevation: 10,
+                ),
+                child: Text("Elevated Button"),
+              ), // ElevatedButton
+            ), // Padding
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: OutlinedButton(
+                onPressed: () {},
+                style: TextButton.styleFrom(
+                  backgroundColor: const Color.fromARGB(255, 194, 83, 127),
+                  foregroundColor: Colors.white,
+                  fixedSize: Size(150, 50),
+                  side: BorderSide(),
+                  elevation: 10,
+                ),
+                child: Text("Outline Button"),
+              ), // OutlinedButton
+            ), // Padding
+            IconButton(onPressed: () {}, icon: Icon(Icons.login, color: const Color.fromARGB(255, 145, 55, 92))),
+          ],
+        ), // Row
+      ), // Padding
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        tooltip: "Add",
+        backgroundColor: const Color.fromARGB(255, 173, 70, 115),
+        foregroundColor: Colors.white,
+        child: Icon(Icons.add),
+        shape: BeveledRectangleBorder(),
+      ), // FloatingActionButton
+
+      //body: Text(
+      //"Hey",
+      //style: TextStyle(
+      //fontSize: 20,
+      //color: const Color.fromARGB(255, 112, 123, 128),
+      //),
+      //),
+    ); // Scaffold
   }
 }
