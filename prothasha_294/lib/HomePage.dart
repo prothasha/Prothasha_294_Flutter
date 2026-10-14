@@ -58,65 +58,95 @@ class HomePage extends StatelessWidget {
           ],
         ), // Column
       ), // Drawer
-      body: Padding(
-        padding: const EdgeInsets.all(10),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextButton(
-                onPressed: () {},
-                style: TextButton.styleFrom(
-                  backgroundColor: const Color.fromARGB(255, 194, 83, 127),
-                  foregroundColor: Colors.white,
-                  fixedSize: Size(150, 50),
-                  side: BorderSide(),
-                  elevation: 10,
-                ),
-                child: Text("Text Button"),
-              ), // TextButton
-            ), // Padding
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: ElevatedButton(
-                onPressed: () {},
-                style: TextButton.styleFrom(
-                  backgroundColor: const Color.fromARGB(255, 194, 83, 127),
-                  foregroundColor: Colors.white,
-                  fixedSize: Size(150, 50),
-                  side: BorderSide(),
-                  elevation: 10,
-                ),
-                child: Text("Elevated Button"),
-              ), // ElevatedButton
-            ), // Padding
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: OutlinedButton(
-                onPressed: () {},
-                style: TextButton.styleFrom(
-                  backgroundColor: const Color.fromARGB(255, 194, 83, 127),
-                  foregroundColor: Colors.white,
-                  fixedSize: Size(150, 50),
-                  side: BorderSide(),
-                  elevation: 10,
-                ),
-                child: Text("Outline Button"),
-              ), // OutlinedButton
-            ), // Padding
-            IconButton(onPressed: () {}, icon: Icon(Icons.login, color: const Color.fromARGB(255, 145, 55, 92))),
-          ],
-        ), // Row
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(10),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: TextButton(
+                    onPressed: () {},
+                    style: TextButton.styleFrom(
+                      backgroundColor: const Color.fromARGB(255, 194, 83, 127),
+                      foregroundColor: Colors.white,
+                      fixedSize: Size(150, 50),
+                      side: BorderSide(),
+                      elevation: 10,
+                    ),
+                    child: Text("Text Button"),
+                  ), // TextButton
+                ), // Padding
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    style: TextButton.styleFrom(
+                      backgroundColor: const Color.fromARGB(255, 194, 83, 127),
+                      foregroundColor: Colors.white,
+                      fixedSize: Size(150, 50),
+                      side: BorderSide(),
+                      elevation: 10,
+                    ),
+                    child: Text("Elevated Button"),
+                  ), // ElevatedButton
+                ), // Padding
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: OutlinedButton(
+                    onPressed: () {},
+                    style: TextButton.styleFrom(
+                      backgroundColor: const Color.fromARGB(255, 194, 83, 127),
+                      foregroundColor: Colors.white,
+                      fixedSize: Size(150, 50),
+                      side: BorderSide(),
+                      elevation: 10,
+                    ),
+                    child: Text("Outline Button"),
+                  ), // OutlinedButton
+                ), // Padding
+                IconButton(onPressed: () {}, icon: Icon(Icons.login, color: const Color.fromARGB(255, 145, 55, 92))),
+              ],
+            ), // Row
+          ),
+          Container(
+            height: 200,
+            width: 200,
+            padding: EdgeInsets.all(30),
+            margin: EdgeInsets.all(20),
+            alignment: Alignment.topCenter,
+            decoration: BoxDecoration(
+              color: const Color.fromARGB(255, 252, 235, 242),
+              border: Border.all(
+                width: 5,
+                color: const Color.fromARGB(255, 145, 55, 92),
+              ),
+              // borderRadius: BorderRadius.all(
+              //   Radius.circular(20),
+              // ),
+              shape: BoxShape.circle,
+              gradient: RadialGradient(
+                colors: [
+                  const Color.fromARGB(255, 255, 220, 234),
+                  const Color.fromARGB(255, 194, 83, 127),
+                ],
+              ),
+            ),
+            child: Text("Hello Container", 
+            style: TextStyle(fontSize: 15)),
+          ),
+        ],
       ), // Padding
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         tooltip: "Add",
         backgroundColor: const Color.fromARGB(255, 173, 70, 115),
         foregroundColor: Colors.white,
-        child: Icon(Icons.add),
         shape: BeveledRectangleBorder(),
+        child: Icon(Icons.add),
       ), // FloatingActionButton
 
       //body: Text(
