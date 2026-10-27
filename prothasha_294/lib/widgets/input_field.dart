@@ -20,8 +20,6 @@ class InputField extends StatelessWidget {
     return TextFormField(
       controller: controller,
       keyboardType: keyboardType,
-
-      // Changed: entered numbers to dark pink
       style: const TextStyle(
         color: Color(0xFF91375C),
       ),
