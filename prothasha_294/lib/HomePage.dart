@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:prothasha_294/calculator_page.dart';
- 
+import 'package:prothasha_294/listview_page.dart'; 
+
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
- 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,26 +25,20 @@ class HomePage extends StatelessWidget {
         child: Column(
           children: [
             UserAccountsDrawerHeader(
-              accountName: Text(
-                "Name",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              accountEmail: Text(
-                "Email",
-                style: TextStyle(
-                  color: Colors.white70,
-                  fontSize: 14,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
+              accountName: Text("Name",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold)),
+              accountEmail: Text("Email",
+                  style: TextStyle(
+                      color: Colors.white70,
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold)),
               decoration: BoxDecoration(
                 color: const Color.fromARGB(255, 145, 55, 92),
-              ), // BoxDecoration
-            ), // UserAccountsDrawerHeader
+              ),
+            ),
             ListTile(
               title: Text("Homepage", style: TextStyle(color: Colors.blueGrey)),
               leading: IconButton(
@@ -56,10 +51,7 @@ class HomePage extends StatelessWidget {
             ),
             Divider(),
             ListTile(
-              title: Text(
-                "Calculator",
-                style: TextStyle(color: Colors.blueGrey),
-              ),
+              title: Text("Calculator", style: TextStyle(color: Colors.blueGrey)),
               leading: IconButton(
                 onPressed: () {},
                 icon: Icon(Icons.calculate_rounded),
@@ -72,7 +64,23 @@ class HomePage extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => CalculatorPage()),
                 );
               },
-            ), // ListTile
+            ),
+            Divider(),
+            ListTile(
+              title: Text("List View Page", style: TextStyle(color: Colors.blueGrey)), 
+              leading: IconButton(
+                onPressed: () {},
+                icon: Icon(Icons.list_alt_rounded),
+                color: Colors.blueGrey,
+              ),
+              hoverColor: const Color.fromARGB(255, 248, 215, 228),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ListViewPage()),
+                );
+              },
+            ),
             Divider(),
             Spacer(),
             ListTile(
@@ -84,9 +92,9 @@ class HomePage extends StatelessWidget {
               ),
               hoverColor: const Color.fromARGB(255, 248, 215, 228),
               onTap: () {},
-            ), // ListTile
+            ),
           ],
-        ), // Column
+        ),
       ), // Drawer
       body: SingleChildScrollView(
         child: SingleChildScrollView(
@@ -111,67 +119,60 @@ class HomePage extends StatelessWidget {
                           );
                         },
                         style: TextButton.styleFrom(
-                          backgroundColor: const Color.fromARGB(
-                            255,
-                            194,
-                            83,
-                            127,
-                          ),
+                          backgroundColor:
+                              const Color.fromARGB(255, 194, 83, 127),
                           foregroundColor: Colors.white,
                           fixedSize: Size(150, 50),
                           side: BorderSide(),
                           elevation: 10,
                         ),
                         child: Text("Calculator Page"),
-                      ), // TextButton
-                    ), // Padding
+                      ),
+                    ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => ListViewPage(),
+                            ),
+                          );
+                        },
                         style: TextButton.styleFrom(
-                          backgroundColor: const Color.fromARGB(
-                            255,
-                            194,
-                            83,
-                            127,
-                          ),
+                          backgroundColor:
+                              const Color.fromARGB(255, 194, 83, 127),
                           foregroundColor: Colors.white,
                           fixedSize: Size(150, 50),
                           side: BorderSide(),
                           elevation: 10,
                         ),
-                        child: Text("Elevated Button"),
-                      ), // ElevatedButton
-                    ), // Padding
+                        child: Text("List View Page"), // ✅ Changed label
+                      ),
+                    ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: OutlinedButton(
                         onPressed: () {},
                         style: TextButton.styleFrom(
-                          backgroundColor: const Color.fromARGB(
-                            255,
-                            194,
-                            83,
-                            127,
-                          ),
+                          backgroundColor:
+                              const Color.fromARGB(255, 194, 83, 127),
                           foregroundColor: Colors.white,
                           fixedSize: Size(150, 50),
                           side: BorderSide(),
                           elevation: 10,
                         ),
                         child: Text("Outline Button"),
-                      ), // OutlinedButton
-                    ), // Padding
-                    IconButton(
-                      onPressed: () {},
-                      icon: Icon(
-                        Icons.login,
-                        color: const Color.fromARGB(255, 145, 55, 92),
                       ),
                     ),
+                    IconButton(
+                      onPressed: () {},
+                      icon: Icon(Icons.login,
+                          color: const Color.fromARGB(255, 145, 55, 92)),
+                    ),
                   ],
-                ), // Row
+                ),
               ),
               Container(
                 height: 200,
@@ -214,7 +215,7 @@ class HomePage extends StatelessWidget {
             ],
           ),
         ),
-      ), // Padding
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         tooltip: "Add",
@@ -222,14 +223,7 @@ class HomePage extends StatelessWidget {
         foregroundColor: Colors.white,
         shape: BeveledRectangleBorder(),
         child: Icon(Icons.add),
-      ), // FloatingActionButton
-      //body: Text(
-      //"Hey",
-      //style: TextStyle(
-      //fontSize: 20,
-      //color: const Color.fromARGB(255, 112, 123, 128),
-      //),
-      //),
-    ); // Scaffold
+      ),
+    );
   }
 }
