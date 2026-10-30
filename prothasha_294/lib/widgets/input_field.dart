@@ -1,9 +1,7 @@
-
 import 'package:flutter/material.dart';
 
 class InputField extends StatelessWidget {
-  final controller, keyboardType, labelText, hintText,
-      prefixIcon, validator;
+  final controller, keyboardType, labelText, hintText, prefixIcon, validator;
 
   const InputField({
     super.key,
@@ -20,8 +18,6 @@ class InputField extends StatelessWidget {
     return TextFormField(
       controller: controller,
       keyboardType: keyboardType,
-
-      // Changed: entered numbers to dark pink
       style: const TextStyle(
         color: Color(0xFF91375C),
       ),
